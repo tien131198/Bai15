@@ -1,5 +1,6 @@
 package enity;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -9,24 +10,45 @@ import java.util.List;
     Time: 7:45 PM
     
     ProjectName: Bai15
-*/public class SinhVienChinhQuy {
+*/public class SinhVienChinhQuy implements Serializable{
     protected String maSV;
     protected String ten;
     protected LocalDate ngaySinh;
     protected int namVaoHoc;
-    protected int diemDauVao;
+    protected float diemDauVao;
+    protected String email;
+    protected String phone;
     protected List<KetQuaHocTap> ketQua;
 
     public SinhVienChinhQuy() {
     }
 
-    public SinhVienChinhQuy(String maSV, String ten, LocalDate ngaySinh, int namVaoHoc, int diemDauVao, List<KetQuaHocTap> ketQua) {
+    public SinhVienChinhQuy(String maSV, String ten, LocalDate ngaySinh, int namVaoHoc, float diemDauVao
+            ,String email, String phone, List<KetQuaHocTap> ketQua) {
         this.maSV = maSV;
         this.ten = ten;
         this.ngaySinh = ngaySinh;
         this.namVaoHoc = namVaoHoc;
         this.diemDauVao = diemDauVao;
         this.ketQua = ketQua;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getMaSV() {
@@ -61,11 +83,11 @@ import java.util.List;
         this.namVaoHoc = namVaoHoc;
     }
 
-    public int getDiemDauVao() {
+    public float getDiemDauVao() {
         return diemDauVao;
     }
 
-    public void setDiemDauVao(int diemDauVao) {
+    public void setDiemDauVao(float diemDauVao) {
         this.diemDauVao = diemDauVao;
     }
 
@@ -85,6 +107,8 @@ import java.util.List;
                 ", ngaySinh=" + ngaySinh +
                 ", namVaoHoc=" + namVaoHoc +
                 ", diemDauVao=" + diemDauVao +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
                 ", ketQua=" + ketQua +
                 '}';
     }

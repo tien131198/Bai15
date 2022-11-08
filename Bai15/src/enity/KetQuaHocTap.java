@@ -1,12 +1,14 @@
 package enity;
 
+import java.io.Serializable;
+
 /* Welcome to project
     @author: tienb
     Date: 11/6/2022
     Time: 7:45 PM
     
     ProjectName: Bai15
-*/public class KetQuaHocTap {
+*/public class KetQuaHocTap implements Serializable {
     private String hocKi;
     private float diemTrungBinh;
 

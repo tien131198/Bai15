@@ -1,5 +1,6 @@
 package enity;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
     Time: 7:45 PM
     
     ProjectName: Bai15
-*/public class SinhVienTaiChuc extends SinhVienChinhQuy{
+*/public class SinhVienTaiChuc extends SinhVienChinhQuy implements Serializable {
     private String noiDaoTao;
     public SinhVienTaiChuc(){
 
@@ -19,8 +20,8 @@ import java.util.List;
         this.noiDaoTao = noiDaoTao;
     }
 
-    public SinhVienTaiChuc(String maSV, String ten, LocalDate ngaySinh, int namVaoHoc, int diemDauVao, List<KetQuaHocTap> ketQua, String noiDaoTao) {
-        super(maSV, ten, ngaySinh, namVaoHoc, diemDauVao, ketQua);
+    public SinhVienTaiChuc(String maSV, String ten, LocalDate ngaySinh, int namVaoHoc, float diemDauVao, String email, String phone, List<KetQuaHocTap> ketQua, String noiDaoTao) {
+        super(maSV, ten, ngaySinh, namVaoHoc, diemDauVao, email, phone, ketQua);
         this.noiDaoTao = noiDaoTao;
     }
 
@@ -41,6 +42,8 @@ import java.util.List;
                 ", ngaySinh=" + ngaySinh +
                 ", namVaoHoc=" + namVaoHoc +
                 ", diemDauVao=" + diemDauVao +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
                 ", ketQua=" + ketQua +
                 '}';
     }
